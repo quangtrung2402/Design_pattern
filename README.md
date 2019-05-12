@@ -1,2 +1,2 @@
-# Design-partern-with-Java
-Study design partern with Java code
+# Design-pattern-with-Java
+Study design pattern with Java code
