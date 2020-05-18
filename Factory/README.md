@@ -21,19 +21,29 @@ __Factory pattern giúp hỗ trợ quá trình tạo instance của object đơn
 - Dễ maintain: khi cần maintain hay upgrade thì chỉ cần sửa lại các class của instance, không ảnh hưởng đến code của client.
 ### 3. How to do:
 - Tạo interface chung cho mỗi loại object
-- Viết method tạo instance dựa trên type được truyền vào hoặc get ra từ tình trạng hệ thống (đây chính là lý do pattern này được gọi là __Factory methol__))
+- Viết method tạo instance dựa trên type được truyền vào hoặc get ra từ tình trạng hệ thống (đây chính là lý do pattern này được gọi là __Factory method__))
 
 ![](FactoryMethod.png)
 
 ## 2. Abtract Factory
 
 ### 1. Context:
-- 
+- Nếu ứng dụng của ta cần một họ các loại đối tượng chia nhiều nhánh khác nhau. Với ví dụ làm UI cho dễ hiểu, ta có các loại widget là các loại UI như TextView, Button, Scrollbar, ... Mỗi loại widget lại có các kiểu Light, Dark, Flatten, ...
+- Việc khởi tạo thủ công từng object lúc này rất là tốn effort, chưa kể còn gây sai sót hoặc bất đồng bộ giữa các kiểu giao diện khác nhau.
 
 ### 2. Advantage:
 - 
 ### 3. How to do:
-- 
+- Về cơ bản thì cách thức thực hiện cũng giống Factory Method. Tuy nhiên vì ta có các kiểu UI khác nhau nên class Factory ta không viết cụ thể mà khai báo như một Abtract class.
+- Sau đó với mỗi loại UI, ta tạo ra một Factory class cụ thể cho chúng theo kiểu Factory method
 
-### 4. Issue:
-- 
+![](AbtractFactory.png)
+
+### 4. When to use:
+- Ứng dụng vào những hệ thống mà các thành phần có mối quan hệ họ-hàng-hang-hốc dây mơ rễ má với nhau. Ví dụ như yêu cầu bên trên, ta có các widget là Button, TextView,... Các widget này có kiểu Dark, Light, Flatten,... Rồi chúng có thể nằm trong các platform khác Window, Linux, MacOS, Android ...
+- Một họ các thành phần liên quan, được thiết kế để sử dụng nhất quán.
+- Muốn tách biệt phần sử dụng logic và khởi tạo instance để nâng cao tính tái sử dung (reusability) và dễ sửa chữa (maintainability)
+
+Tham khảo:
+- https://cppdeveloper.com/design-patterns/design-patterns-3-factory-pattern/
+- https://cppdeveloper.com/design-patterns/design-patterns-3-factory-pattern-phan-2-abstract-factory/
