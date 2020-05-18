@@ -21,8 +21,9 @@ __Factory pattern giúp hỗ trợ quá trình tạo instance của object đơn
 - Dễ maintain: khi cần maintain hay upgrade thì chỉ cần sửa lại các class của instance, không ảnh hưởng đến code của client.
 ### 3. How to do:
 - Tạo interface chung cho mỗi loại object
-- Viết method tạo instance dựa trên type được truyền vào hoặc get ra từ tình trạng hệ thống (đây chính là lý do pattern này được gọi là __Factory methon__))
+- Viết method tạo instance dựa trên type được truyền vào hoặc get ra từ tình trạng hệ thống (đây chính là lý do pattern này được gọi là __Factory methol__))
 
+![](FactoryMethod.png)
 
 ## 2. Abtract Factory
 
